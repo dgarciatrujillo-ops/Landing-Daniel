@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #f4f7fa; /* Fondo suave */
         }
-        /* Estilos específicos para la autoridad visual */
+        /* Estilos especí<!DOCTYPE html>ficos para la autoridad visual */
         .header-bg {
             background: linear-gradient(135deg, #1f2937 0%, #374151 100%); /* Fondo oscuro profesional */
         }
@@ -43,7 +43,7 @@
                 max-width: 300px;
             }
         }
-        .video-container video, .video-story-container video {
+        .video-container video, .video-story-container video, .video-container iframe, .video-story-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -76,14 +76,13 @@
                 
                 <!-- Contenedor de la Imagen de Perfil -->
                 <div class="w-24 h-24 mx-auto mb-4 relative">
-                    <!-- 1. FOTO DE PERFIL (USANDO PLACEHOLDER POR SEGURIDAD CSP EN PREVIEW) -->
+                    <!-- 1. FOTO DE PERFIL: PEGAR NOMBRE DE ARCHIVO EJ: "perfil.jpg" -->
                     <img 
-                        src="https://placehold.co/96x96/374151/FFFFFF?text=DG" 
+                        src="Foto.png" 
                         alt="Foto de perfil de Daniel García" 
                         class="w-full h-full rounded-full object-cover border-4 border-gray-900 transition duration-300"
                         onerror="this.onerror=null; this.src='https://placehold.co/96x96/374151/FFFFFF?text=DG'"
                     >
-                    <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1LRD25zjSMVl2gfXRHvSz2d8FGh10fKss -->
                 </div>
                 
                 <h1 class="text-4xl sm:text-5xl font-extrabold mb-2">Daniel García</h1>
@@ -99,14 +98,13 @@
                     <!-- Afiliación 1: La Laguna Tenerife (CB Canarias) -->
                     <div class="flex flex-col items-center w-[100px] text-center">
                         <div class="w-16 h-16 relative">
-                            <!-- 2. LOGO LA LAGUNA TENERIFE (USANDO PLACEHOLDER) -->
+                            <!-- 2. LOGO LA LAGUNA TENERIFE: PEGAR NOMBRE DE ARCHIVO EJ: "logo_laguna.png" -->
                             <img 
-                                src="https://placehold.co/64x64/0000FF/FFFFFF?text=L" 
+                                src="Escudo.jpeg" 
                                 alt="Escudo La Laguna Tenerife" 
                                 class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
                                 onerror="this.onerror=null; this.src='https://placehold.co/64x64/0000FF/FFFFFF?text=L'"
                             >
-                            <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1LLphI-96XkYmLpDqQMfCPvQc4zZW9qp- -->
                         </div>
                         <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">La Laguna Tenerife</span>
                     </div>
@@ -114,14 +112,13 @@
                     <!-- Afiliación 2: Federación Española de Baloncesto (FEB) -->
                     <div class="flex flex-col items-center w-[100px] text-center">
                         <div class="w-16 h-16 relative">
-                            <!-- 3. LOGO FEB (USANDO PLACEHOLDER) -->
+                            <!-- 3. LOGO FEB: PEGAR NOMBRE DE ARCHIVO EJ: "logo_feb.png" -->
                             <img 
-                                src="https://placehold.co/64x64/FF0000/FFFFFF?text=F" 
+                                src="FEB.jpeg" 
                                 alt="Escudo FEB" 
                                 class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
                                 onerror="this.onerror=null; this.src='https://placehold.co/64x64/FF0000/FFFFFF?text=F'"
                             >
-                            <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1f0Eh77FNQF0OE606SBKIJVdgT_SVMWXI -->
                         </div>
                         <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">FEB</span>
                     </div>
@@ -129,14 +126,13 @@
                     <!-- Afiliación 3: Otros deportistas alto rendimiento -->
                     <div class="flex flex-col items-center w-[100px] text-center">
                         <div class="w-16 h-16 relative">
-                            <!-- 4. ICONO OTROS DEPORTISTAS (USANDO PLACEHOLDER) -->
+                            <!-- 4. ICONO OTROS DEPORTISTAS: PEGAR NOMBRE DE ARCHIVO EJ: "icono_ar.png" -->
                             <img 
-                                src="https://placehold.co/64x64/4ade80/000000?text=AR" 
+                                src="JJOO.png" 
                                 alt="Otros deportistas de alto rendimiento" 
                                 class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
                                 onerror="this.onerror=null; this.src='https://placehold.co/64x64/4ade80/000000?text=AR'"
                             >
-                            <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1ODhCP9Lv_crulwusuZaOzKH0Qr-7BuOC -->
                         </div>
                         <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">Otros deportistas de alto rendimiento</span>
                     </div>
@@ -144,14 +140,13 @@
                     <!-- Afiliación 4: Readaptador de lesiones -->
                     <div class="flex flex-col items-center w-[100px] text-center">
                         <div class="w-16 h-16 relative">
-                            <!-- 5. ICONO READAPTADOR DE LESIONES (USANDO PLACEHOLDER) -->
+                            <!-- 5. ICONO READAPTADOR DE LESIONES: PEGAR NOMBRE DE ARCHIVO EJ: "icono_rl.png" -->
                             <img 
-                                src="https://placehold.co/64x64/f97316/FFFFFF?text=RL" 
+                                src="Espalda.png" 
                                 alt="Readaptador de lesiones" 
                                 class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
                                 onerror="this.onerror=null; this.src='https://placehold.co/64x64/f97316/FFFFFF?text=RL'"
                             >
-                            <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1RFEoUURLLLs4HVB3tD7IQvZbB82XX9nL -->
                         </div>
                         <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">Readaptador de lesiones</span>
                     </div>
@@ -217,14 +212,13 @@
                 <!-- TrueCoach Logo y Título -->
                 <div class="flex flex-col items-center mb-6">
                     <div class="w-16 h-16 relative mb-2">
-                        <!-- 6. LOGO TRUECOACH (USANDO PLACEHOLDER) -->
+                        <!-- 6. LOGO TRUECOACH: PEGAR NOMBRE DE ARCHIVO EJ: "logo_truecoach.png" -->
                         <img 
-                            src="https://placehold.co/64x64/000000/FFFFFF?text=TC" 
+                            src="TrueCoach.png" 
                             alt="Logo TrueCoach" 
                             class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
                             onerror="this.onerror=null; this.src='https://placehold.co/64x64/000000/FFFFFF?text=TC'"
                         >
-                        <!-- URL CORRECTA INTEGRADA: https://drive.google.com/uc?export=view&id=1-zyKOuFCypPzH7QwxF8Atb59K3iOHkOv -->
                     </div>
                     <p class="text-xl font-extrabold text-indigo-700">TrueCoach</p>
                 </div>
@@ -269,10 +263,14 @@
                     <div class="bg-gray-50 p-4 rounded-xl shadow-inner border border-gray-300">
                         <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">💻 Programación Semanal</h3>
                         <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
-                            <!-- 7. VIDEO PROGRAMACIÓN (VISTA COACH) - CORREGIDO -->
-                            <video controls class="w-full h-full bg-gray-200" 
-                                src="https://drive.google.com/uc?export=view&id=1A_txa6sCERJ7T9hgX4vXyLMH3WUGs-KA">
-                            </video>
+                            <!-- 7. VIDEO PROGRAMACIÓN (VISTA COACH) - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/gzxMCXIgNt4" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
 
@@ -281,10 +279,14 @@
                          <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">📱 El entrenamiento en tu móvil o Tablet</h3>
                         <!-- APLICA EL NUEVO CONTENEDOR VERTICAL (9:16) -->
                         <div class="video-story-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
-                            <!-- 8. VIDEO ENTRENAMIENTO (VISTA CLIENTE) - CORREGIDO -->
-                            <video controls class="w-full h-full bg-gray-200" 
-                                src="https://drive.google.com/uc?export=view&id=1A_txa6sCERJ7T9hgX4vXyLMH3WUGs-KA">
-                            </video>
+                            <!-- 8. VIDEO ENTRENAMIENTO (VISTA CLIENTE) - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/XvBr45j6hCA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -308,10 +310,14 @@
                     <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
                         <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🏋️ ¿Te imaginas entrenando así?</h3>
                         <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
-                            <!-- 9. VIDEO PROPUESTA 1 - CORREGIDO -->
-                            <video controls class="w-full h-full bg-gray-200" 
-                                src="https://drive.google.com/uc?export=view&id=16or2sVhJyxPRsSbpEzoBjktbsjHhhL-2">
-                            </video>
+                            <!-- 9. VIDEO PROPUESTA 1 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/VhGUDMRzW5s" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
 
@@ -319,10 +325,14 @@
                     <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
                         <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🏃 ¿Te imaginas entrenando así?</h3>
                         <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
-                            <!-- 10. VIDEO PROPUESTA 2 - CORREGIDO -->
-                            <video controls class="w-full h-full bg-gray-200" 
-                                src="https://drive.google.com/uc?export=view&id=1oTpxd2LO_oaGAnvHHe5ZwEaLfzjvxLF9">
-                            </video>
+                            <!-- 10. VIDEO PROPUESTA 2 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/i0hmkBOtqOc" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
 
@@ -330,10 +340,14 @@
                     <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
                         <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🤸 ¿Te imaginas entrenando así?</h3>
                         <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
-                            <!-- 11. VIDEO PROPUESTA 3 - CORREGIDO -->
-                            <video controls class="w-full h-full bg-gray-200" 
-                                src="https://drive.google.com/uc?export=view&id=1LHUtERFJYD_ASK89gLsxYy102sVa4Yul">
-                            </video>
+                            <!-- 11. VIDEO PROPUESTA 3 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/1Azw8uei4JA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -344,7 +358,7 @@
                 
                 <!-- PRECIO CIRCULAR ABSOLUTO (Overlap) -->
                 <div class="absolute top-0 right-0 transform -translate-y-1/2 translate-x-1/4 z-10" id="price-circle">
-                    <div class="w-32 h-32 flex flex-col items-center justify-center rounded-full bg-white text-gray-900 shadow-2xl ring-4 ring-gray-900">
+                    <div class="w-32 h-32 flex flex-col items-center justify-center rounded-full bg-white text-gray-900 shadow-2xl ring-4 ring-gray-900 animate-pulse-scale">
                         <span class="text-lg font-extrabold font-serif uppercase leading-none">Solo</span>
                         <span class="text-4xl font-black font-serif leading-none">40€</span>
                         <span class="text-sm font-semibold font-serif uppercase">/ Mes</span>
@@ -356,7 +370,7 @@
                     <h3 class="text-2xl font-extrabold uppercase mb-1 tracking-widest text-red-400">
                         ¡ATENCIÓN!
                     </h3>
-                    <p class="text-3xl font-extrabold uppercase mb-1 tracking-wide text-white" id="plazas-text">
+                    <p class="text-3xl font-extrabold uppercase mb-1 tracking-wide text-white animate-pulse-scale" id="plazas-text">
                         SOLO 4 PLAZAS DISPONIBLES
                     </p>
                     
