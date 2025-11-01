@@ -1,0 +1,541 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel García - Entrenamiento Personalizado Online</title>
+    <!-- Carga de Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuración de fuente y estilos base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa; /* Fondo suave */
+        }
+        /* Estilos especí<!DOCTYPE html>ficos para la autoridad visual */
+        .header-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%); /* Fondo oscuro profesional */
+        }
+        /* Las tarjetas del formulario y otros elementos ahora usan el fondo oscuro */
+        .form-card {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilos para videos */
+        .video-container, .video-story-container {
+            position: relative;
+            width: 100%;
+        }
+        .video-container {
+            padding-top: 56.25%; /* Ratio 16:9 (Horizontal) */
+        }
+        /* ESTILO VERTICAL: Para video de Historia de Instagram (9:16) */
+        .video-story-container {
+            padding-top: 150%; /* Ajuste para que se vea más grande en móvil sin ocupar toda la pantalla */
+            /* Limita el ancho para simular un móvil centrado */
+            max-width: 250px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 640px) {
+            /* Restablece un tamaño más estándar en tabletas y escritorio */
+             .video-story-container {
+                padding-top: 177.77%; 
+                max-width: 300px;
+            }
+        }
+        .video-container video, .video-story-container video, .video-container iframe, .video-story-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Animación de Pulso para la Oferta --- */
+        @keyframes pulse-scale {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03); /* Crecimiento sutil */
+            }
+        }
+
+        .animate-pulse-scale {
+            animation: pulse-scale 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="min-h-screen">
+
+        <!-- Sección de Cabecera y Autoridad -->
+        <header class="header-bg text-white py-12 md:py-20">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                
+                <!-- Contenedor de la Imagen de Perfil -->
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <!-- 1. FOTO DE PERFIL: PEGAR NOMBRE DE ARCHIVO EJ: "perfil.jpg" -->
+                    <img 
+                        src="perfil_daniel.jpg" 
+                        alt="Foto de perfil de Daniel García" 
+                        class="w-full h-full rounded-full object-cover border-4 border-gray-900 transition duration-300"
+                        onerror="this.onerror=null; this.src='https://placehold.co/96x96/374151/FFFFFF?text=DG'"
+                    >
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-2">Daniel García</h1>
+                
+                <!-- SUBTÍTULO ESTILIZADO (Gris Oscuro) -->
+                <p class="text-gray-400 text-2xl font-black uppercase mb-4 tracking-wider">
+                    PREPARADOR FÍSICO
+                </p>
+
+                <!-- CONTENEDOR DE AFILIACIONES CON ESCUDOS -->
+                <div class="flex justify-center items-start gap-4 mb-6 flex-nowrap overflow-x-auto px-2">
+
+                    <!-- Afiliación 1: La Laguna Tenerife (CB Canarias) -->
+                    <div class="flex flex-col items-center w-[100px] min-w-[90px] text-center">
+                        <div class="w-16 h-16 relative">
+                            <!-- 2. LOGO LA LAGUNA TENERIFE: PEGAR NOMBRE DE ARCHIVO EJ: "logo_laguna.png" -->
+                            <img 
+                                src="logo_laguna.png" 
+                                alt="Escudo La Laguna Tenerife" 
+                                class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
+                                onerror="this.onerror=null; this.src='https://placehold.co/64x64/0000FF/FFFFFF?text=L'"
+                            >
+                        </div>
+                        <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">La Laguna Tenerife</span>
+                    </div>
+
+                    <!-- Afiliación 2: Federación Española de Baloncesto (FEB) -->
+                    <div class="flex flex-col items-center w-[100px] min-w-[90px] text-center">
+                        <div class="w-16 h-16 relative">
+                            <!-- 3. LOGO FEB: PEGAR NOMBRE DE ARCHIVO EJ: "logo_feb.png" -->
+                            <img 
+                                src="logo_feb.png" 
+                                alt="Escudo FEB" 
+                                class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
+                                onerror="this.onerror=null; this.src='https://placehold.co/64x64/FF0000/FFFFFF?text=F'"
+                            >
+                        </div>
+                        <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">FEB</span>
+                    </div>
+
+                    <!-- Afiliación 3: Otros deportistas alto rendimiento -->
+                    <div class="flex flex-col items-center w-[100px] min-w-[90px] text-center">
+                        <div class="w-16 h-16 relative">
+                            <!-- 4. ICONO OTROS DEPORTISTAS: PEGAR NOMBRE DE ARCHIVO EJ: "icono_ar.png" -->
+                            <img 
+                                src="icono_ar.png" 
+                                alt="Otros deportistas de alto rendimiento" 
+                                class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
+                                onerror="this.onerror=null; this.src='https://placehold.co/64x64/4ade80/000000?text=AR'"
+                            >
+                        </div>
+                        <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">Otros deportistas de alto rendimiento</span>
+                    </div>
+
+                    <!-- Afiliación 4: Readaptador de lesiones -->
+                    <div class="flex flex-col items-center w-[100px] min-w-[90px] text-center">
+                        <div class="w-16 h-16 relative">
+                            <!-- 5. ICONO READAPTADOR DE LESIONES: PEGAR NOMBRE DE ARCHIVO EJ: "icono_rl.png" -->
+                            <!-- Se mantiene el p-0.5 para que el logo ocupe más espacio en el círculo -->
+                            <img 
+                                src="icono_rl.png" 
+                                alt="Readaptador de lesiones" 
+                                class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-0.5 bg-white"
+                                onerror="this.onerror=null; this.src='https://placehold.co/64x64/f97316/FFFFFF?text=RL'"
+                            >
+                        </div>
+                        <span class="mt-2 text-xs font-semibold text-gray-200 leading-tight">Readaptador de lesiones</span>
+                    </div>
+
+                </div>
+
+                <!-- DESCRIPCIÓN ACTUALIZADA Y SEPARADA -->
+                <p class="mt-4 text-gray-300 max-w-2xl mx-auto mb-3 text-lg font-medium">
+                    Mi filosofía se basa en la <b><span class="text-white font-extrabold">innovación metodológica</span></b> y la <b><span class="text-white font-extrabold">máxima adaptabilidad</span></b>.
+                </p>
+                <p class="text-gray-300 max-w-2xl mx-auto text-xs">
+                    No importa si entrenas en casa, en un gimnasio o al aire libre: diseñaré rutinas eficientes y personalizadas, optimizando tu espacio y el material disponible. Entrena bajo mi dirección y aplica métodos de alto rendimiento para alcanzar cualquier objetivo, desde el bienestar hasta la readaptación o la preparación específica.
+                </p>
+            </div>
+        </header>
+
+        <!-- Contenido Principal: Descripción del Servicio y Metodología -->
+        <main class="max-w-4xl mx-auto p-4 md:p-8">
+            
+            <section class="mb-12">
+                <!-- Título Centrado -->
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-500 pb-2 text-center">Tu Entrenamiento, mi Compromiso.</h2>
+                
+                <!-- GRID DE SERVICIOS -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Foco 1: Calidad, Salud y Bienestar -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-xl text-center">
+                        <div class="text-indigo-600 text-3xl mb-3">🏋️‍♀️</div>
+                        <h3 class="font-semibold text-xl mb-2 text-gray-900">Objetivos de Salud y Bienestar</h3>
+                        <p class="text-gray-600 text-sm">Entrena con la <b><span class="text-gray-900">máxima calidad</span></b> para alcanzar tu objetivo de <b><span class="text-gray-900">salud y bienestar</span></b>, sea estético o de rendimiento físico general.</p>
+                    </div>
+
+                    <!-- Foco 2: Recuperación/Lesiones -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-xl text-center">
+                        <div class="text-indigo-600 text-3xl mb-3">🩹</div>
+                        <h3 class="font-semibold text-xl mb-2 text-gray-900">Recuperación Funcional</h3>
+                        <p class="text-gray-600 text-sm">Planes adaptados para la <b><span class="text-gray-900">recuperación post-lesión</span></b>, asegurando una vuelta segura y progresiva a tu actividad normal.</p>
+                    </div>
+                    
+                    <!-- Foco 3: Individualización -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-xl text-center">
+                        <div class="text-indigo-600 text-3xl mb-3">🎯</div>
+                        <h3 class="font-semibold text-xl mb-2 text-gray-900">Plan 100% Individual</h3>
+                        <p class="text-gray-600 text-sm">Cada sesión es diseñada en base a tu <b><span class="text-gray-900">historial, disponibilidad y equipamiento</span></b>, garantizando la máxima eficiencia.</p>
+                    </div>
+                    
+                    <!-- Foco 4: Pruebas y Oposiciones -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-xl text-center">
+                        <div class="text-indigo-600 text-3xl mb-3">🏃‍♂️</div>
+                        <h3 class="font-semibold text-xl mb-2 text-gray-900">Preparación de Pruebas y Eventos</h3>
+                        <p class="text-gray-600 text-sm">Planes específicos y estructurados para superar <b><span class="text-gray-900">carreras, oposiciones físicas</span></b> o cualquier otro evento de rendimiento con tu mejor marca.</p>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Sección de Metodología (TRUECOACH) -->
+            <section class="mb-12 bg-indigo-50 p-6 md:p-8 rounded-xl">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2
+                text-center">¿Cómo trabajaremos?</h2>
+                
+                <!-- TrueCoach Logo y Título -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="w-16 h-16 relative mb-2">
+                        <!-- 6. LOGO TRUECOACH: PEGAR NOMBRE DE ARCHIVO EJ: "logo_truecoach.png" -->
+                        <img 
+                            src="logo_truecoach.png" 
+                            alt="Logo TrueCoach" 
+                            class="w-full h-full object-contain rounded-full border-2 border-gray-900 p-1 bg-white"
+                            onerror="this.onerror=null; this.src='https://placehold.co/64x64/000000/FFFFFF?text=TC'"
+                        >
+                    </div>
+                    <p class="text-xl font-extrabold text-indigo-700">TrueCoach</p>
+                </div>
+                <!-- Fin TrueCoach Logo y Título -->
+                
+                <ul class="space-y-4 text-gray-700 text-left max-w-lg mx-auto">
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 font-bold mr-3 mt-1">1.</span>
+                        <p class="text-justify">
+                            <b><span class="text-gray-900">Acceso Exclusivo:</span></b> Recibirás tu planificación a través de la app <b><span class="text-gray-900">TRUECOACH</span></b>, tu centro de entrenamiento digital.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 font-bold mr-3 mt-1">2.</span>
+                        <p class="text-justify">
+                            <b><span class="text-gray-900">Seguimiento Semanal Detallado:</span></b> Analizaré tus datos de rendimiento, fatiga y sensaciones, ajustando la carga y la progresión <b><span class="text-gray-900">semana a semana</span></b>.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 font-bold mr-3 mt-1">3.</span>
+                        <p class="text-justify">
+                            <b><span class="text-gray-900">Feedback Técnico:</span></b> Enviarás videos de tus ejercicios y yo te daré <b><span class="text-gray-900">correcciones técnicas</span></b> precisas, como lo haría en la pista.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 font-bold mr-3 mt-1">4.</span>
+                        <p class="text-gray-900 text-justify">
+                            <b><span class="text-gray-900">Contenido Adicional de Valor:</span></b> Recibirás periódicamente información clara y accesible sobre <b><span class="text-gray-900">salud, nutrición y rendimiento</span></b>, vinculada a tu progreso y objetivos.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECCIÓN UNIFICADA: PLANIFICACIÓN Y VISTAS DE APP (TAMAÑO REDUCIDO) -->
+            <section class="mb-12 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-indigo-200">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Tu planificación semanal</h2>
+                
+                <!-- REDUCCIÓN DEL ANCHO MÁXIMO DEL GRID AQUÍ (max-w-3xl) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start max-w-3xl mx-auto">
+
+                    <!-- Columna 1: Vista del Coach (Video Programación) -->
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-inner border border-gray-300">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">💻 Programación Semanal</h3>
+                        <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
+                            <!-- 7. VIDEO PROGRAMACIÓN (VISTA COACH) - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/gzxMCXIgNt4" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Vista del Cliente (Video Móvil/Story) -->
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-inner border border-gray-300">
+                         <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">📱 El entrenamiento en tu móvil o Tablet</h3>
+                        <!-- APLICA EL NUEVO CONTENEDOR VERTICAL (9:16) -->
+                        <div class="video-story-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
+                            <!-- 8. VIDEO ENTRENAMIENTO (VISTA CLIENTE) - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/XvBr45j6hCA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXTO DE VALOR AÑADIDO (Feedback/Cargas) -->
+                <div class="mt-6 p-4 bg-indigo-50 rounded-lg text-center max-w-3xl mx-auto">
+                    <p class="text-gray-700 text-sm font-medium">
+                        Cada ejercicio que realizas y registras las cargas queda guardado en tu historial. Esto permite un <b><span class="text-gray-900">feedback constante y ajustado</span></b>, garantizando que tu progresión no se base solo en sensaciones, sino en un <b><span class="text-gray-900">análisis real de tu rendimiento</span></b> en cada sesión.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Videos de Demostración (SOLO LAS TRES PROPUESTAS) -->
+            <section class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Demostraciones y Contenido Multimedia</h2>
+                
+                <!-- SOLO UNA COLUMNA CON LAS 3 PROPUESTAS APILADAS -->
+                <div class="space-y-6 max-w-sm mx-auto">
+                    
+                    <!-- Video 3: Propuesta de Entrenamiento 1 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🏋️ ¿Te imaginas entrenando así?</h3>
+                        <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
+                            <!-- 9. VIDEO PROPUESTA 1 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/VhGUDMRzW5s" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 4: Propuesta de Entrenamiento 2 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🏃 ¿Te imaginas entrenando así?</h3>
+                        <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
+                            <!-- 10. VIDEO PROPUESTA 2 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/i0hmkBOtqOc" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 5: Propuesta de Entrenamiento 3 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-3 text-center">🤸 ¿Te imaginas entrenando así?</h3>
+                        <div class="video-container relative rounded-lg overflow-hidden mb-2 border-2 border-gray-400">
+                            <!-- 11. VIDEO PROPUESTA 3 - ¡URL FINAL DE YOUTUBE! -->
+                            <iframe 
+                                class="w-full h-full absolute top-0 left-0" 
+                                src="https://www.youtube.com/embed/1Azw8uei4JA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Bloque de PRECIO y CUPOS LIMITADOS (Estilo Moderno con Precio Solapado) -->
+            <div class="relative mb-16" id="attention-block">
+                
+                <!-- PRECIO CIRCULAR ABSOLUTO (Overlap) -->
+                <div class="absolute top-0 right-0 transform -translate-y-1/2 translate-x-1/4 z-10" id="price-circle">
+                    <div class="w-32 h-32 flex flex-col items-center justify-center rounded-full bg-white text-gray-900 shadow-2xl ring-4 ring-gray-900 animate-pulse-scale">
+                        <span class="text-lg font-extrabold font-serif uppercase leading-none">Solo</span>
+                        <span class="text-4xl font-black font-serif leading-none">40€</span>
+                        <span class="text-sm font-semibold font-serif uppercase">/ Mes</span>
+                    </div>
+                </div>
+
+                <!-- ATENCIÓN BOX (Azul Oscuro y Borde Negro) -->
+                <div class="bg-indigo-800 text-white p-6 md:p-8 rounded-xl shadow-2xl text-center transform transition duration-500 hover:scale-[1.01] border-4 border-gray-900">
+                    <h3 class="text-2xl font-extrabold uppercase mb-1 tracking-widest text-red-400">
+                        ¡ATENCIÓN!
+                    </h3>
+                    
+                    <!-- ELIMINADA LA LÍNEA "SOLO 4 PLAZAS DISPONIBLES" -->
+
+                    <!-- AJUSTE: Quitamos el '+' de la prueba gratuita y eliminamos el mb-1 que estaba justo arriba de las plazas -->
+                    <p class="text-xl uppercase tracking-wide text-white mb-2">
+                        1 SEMANA DE PRUEBA GRATUITA
+                    </p>
+
+                    <p class="mt-4 text-base font-light text-indigo-200">
+                        Para mí es vital garantizar la individualización, y la única forma de ofrecer la calidad de un entrenamiento de alto rendimiento. Por ello, si te unes hoy, recibirás la misma atención de élite. No solo los deportistas de alto rendimiento deben entrenar con las últimas tendencias de entrenamiento; ¡ahora tú también puedes!
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Sección del Formulario de Solicitud de Información (Fondo Blanco Revertido) -->
+            <section class="mb-12">
+                <div class="form-card bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                    <!-- Título en Gris Oscuro sobre fondo blanco -->
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Da el Primer Paso.</h2>
+                    <p class="text-gray-600 mb-6">Completa el formulario y te contactaré personalmente para una valoración inicial sin compromiso.</p>
+                    
+                    <form id="info-request-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                            <input type="text" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-gray-900">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                            <input type="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-gray-900">
+                        </div>
+                        <!-- CAMPO: Teléfono para WhatsApp -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono (WhatsApp)</label>
+                            <input type="tel" id="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-gray-900" placeholder="Ej: +34 6XX XXX XXX">
+                        </div>
+                        <div>
+                            <label for="goal" class="block text-sm font-medium text-gray-700">Principal Objetivo o Necesidad</label>
+                            <textarea id="goal" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-gray-900" placeholder="Ej: Ganar fuerza / Recuperarme del hombro / Mejorar mi condición física general"></textarea>
+                        </div>
+                        
+                        <!-- BOTÓN CON FONDO GRIS OSCURO -->
+                        <button type="submit" id="submit-button" class="w-full py-3 px-4 border border-transparent rounded-lg shadow-md text-lg font-semibold text-white bg-gray-700 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 transition duration-150">
+                            Solicitar Más Información (Abrir WhatsApp)
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de éxito actualizado para WhatsApp (Ajustado para fondo claro) -->
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg" role="alert">
+                        <p class="font-bold">¡Redirección Lista!</p>
+                        <p class="text-sm">Tu chat de **WhatsApp** se abrirá en una nueva pestaña con tu mensaje pre-escrito. Si lo prefieres, puedes usar el email de respaldo a continuación:</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="bg-gray-800 text-white p-4 text-center text-sm">
+            <p>&copy; 2025 Daniel García - Entrenamiento Personalizado Online</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('info-request-form');
+            const successMessage = document.getElementById('success-message');
+            const submitButton = document.getElementById('submit-button');
+            
+            // --- CONSTANTES CRÍTICAS: TU NÚMERO DE WHATSAPP ---
+            const DANIEL_WHATSAPP_NUMBER = "34626715078"; // CONFIRMADO
+            const DANIEL_EMAIL = "dgarciatrujillo@gmail.com"; // CONFIRMADO
+            // --------------------------------------------------
+
+            // --- Lógica de Animación al Hacer Scroll (Intersection Observer) ---
+            const attentionBlock = document.getElementById('attention-block');
+            const priceCircle = document.getElementById('price-circle');
+            const plazasText = document.getElementById('plazas-text');
+
+            if (attentionBlock && priceCircle && plazasText) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Cuando el 50% del elemento es visible, aplica la animación
+                            priceCircle.classList.add('animate-pulse-scale');
+                            // Eliminamos el texto de plazas, solo animamos el precio
+                        } else {
+                            // Cuando no es visible, remueve la animación
+                            priceCircle.classList.remove('animate-pulse-scale');
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // Ejecutar cuando el 50% del elemento esté visible
+                });
+
+                observer.observe(attentionBlock);
+            }
+            // ------------------------------------------------------------------
+
+            // --- Lógica del Formulario: WhatsApp Redirección ---
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                // Validación de número
+                if (!DANIEL_WHATSAPP_NUMBER) {
+                    console.error("Error: Número de WhatsApp no configurado.");
+                    return;
+                }
+
+                // Deshabilitar el botón y mostrar un indicador de carga
+                submitButton.textContent = 'Generando enlace de WhatsApp...';
+                submitButton.disabled = true;
+                submitButton.classList.remove('bg-gray-700', 'hover:bg-gray-800'); // Quitar color normal
+                submitButton.classList.add('bg-gray-500'); // Color de carga
+
+                // Recopilación de datos del formulario
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const goal = document.getElementById('goal').value;
+
+                // 1. Construir el mensaje de WhatsApp (URL-encoded)
+                const whatsappMessage = 
+                    `¡Hola Daniel! Vengo de tu página de entrenamiento y quiero más información sobre tu servicio online.\n\n` +
+                    `*Mis datos:*\n` +
+                    `Nombre: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Teléfono: ${phone}\n` +
+                    `Objetivo: ${goal}`;
+
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                const whatsappUrl = `https://wa.me/${DANIEL_WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                
+                // 2. Construir el enlace mailto (como respaldo)
+                const emailSubject = encodeURIComponent("Solicitud de Información - Entrenamiento Online");
+                const emailBody = encodedMessage; // Reutilizamos el mismo cuerpo
+                const mailtoUrl = `mailto:${DANIEL_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+
+
+                // SIMULACIÓN DE ENVÍO Y REDIRECCIÓN (0.5 segundos)
+                setTimeout(() => {
+                    
+                    // Abrir WhatsApp en una nueva pestaña (para que el cliente pueda chatear)
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Actualizar el mensaje de éxito en la página
+                    submitButton.textContent = '¡Redireccionado a WhatsApp!';
+                    successMessage.classList.remove('hidden');
+
+                    // Añadir el enlace de respaldo al correo en el mensaje de éxito
+                    successMessage.innerHTML = 
+                        `<p class="font-bold">¡Redirección Lista!</p>` +
+                        `<p class="text-sm">Tu chat de **WhatsApp** se abrió en una nueva pestaña con tu mensaje pre-escrito. Si prefieres enviarme la información por correo, haz clic aquí:</p>` +
+                        `<a href="${mailtoUrl}" class="text-sm font-semibold underline text-indigo-700 block mt-2" target="_blank">Enviar Email a Daniel (${DANIEL_EMAIL})</a>`;
+
+                    // Re-habilitar y limpiar el formulario (opcionalmente)
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('bg-gray-500'); // Quitar color de carga
+                    submitButton.classList.add('bg-gray-700', 'hover:bg-gray-800'); // Restablecer color normal
+                    submitButton.textContent = 'Solicitar Más Información (Abrir WhatsApp)'; // Restablecer texto original
+
+                }, 500); 
+            });
+        });
+    </script>
+</body>
+</html>
